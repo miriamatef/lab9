@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -28,7 +29,7 @@ public class Mode3Validator implements SudokuValidator {
             throw new IllegalArgumentException("Board must be 9x9");
         }
         this.board = boardToTest;
-        this.result = new ValidationResult();
+        this.result = new ValidationResult(board);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class Mode3Validator implements SudokuValidator {
         }
 
         this.board = boardToTest;
-        ValidationResult result = new ValidationResult();
+        ValidationResult result = new ValidationResult(board);
 
         // Create checkers using Factory Method Pattern
         Runnable rowChecker = CheckerFactory.createChecker(CheckerType.ROW, board, result);
