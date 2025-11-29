@@ -26,13 +26,14 @@ public class RowChecker implements Runnable {
             //Loop through each digit and its list of positions
                 
                 int digit = entry.getKey();
+                if (digit == 0) continue;
                 List<int[]> positions = entry.getValue(); 
                 //This is the list of where that digit appears in the row.
                 
                  if (positions.size() > 1) {
                  //if the digit appears more than once then it's duplicated
                  
-                    DuplicateError err = new DuplicateError(DuplicateError.Type.ROW, r, digit);
+                    DuplicateError err = new DuplicateError("ROW", r, digit);
                     for (int[] pos : positions) 
                         err.addPosition(pos[0], pos[1]);
                     result.addError(err);
