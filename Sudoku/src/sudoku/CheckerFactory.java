@@ -1,8 +1,13 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sudoku;
+
+import static sudoku.CheckerType.BOX;
+import static sudoku.CheckerType.COLUMN;
+import static sudoku.CheckerType.ROW;
 
 /**
  *
