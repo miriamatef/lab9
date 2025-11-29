@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -35,7 +36,7 @@ public class RowChecker implements Runnable {
                  
                     DuplicateError err = new DuplicateError("ROW", r, digit);
                     for (int[] pos : positions) 
-                        err.addPosition(pos[0], pos[1]);
+                        err.addPosition(pos[1]+1);//
                     result.addError(err);
                     //this marks the whole board invald and adds the error in the synchronized list
                 }
