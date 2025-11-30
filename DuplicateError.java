@@ -4,29 +4,32 @@
  */
 package sudoku;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class DuplicateError {
 
     public String type;  
     public int index;     
     public int number;    
-    public List<String> positions; 
+    public Set<Integer> positions;
 
     public DuplicateError(String type, int index, int number) {
         this.type = type;
-        this.index = index;
+        this.index = index+1;
         this.number = number;
-        this.positions = new ArrayList<>();
+        this.positions= new LinkedHashSet<>();
     }
 
-    public void addPosition(int r, int c) {
-        positions.add("(" + r + "," + c + ")");
+    public void addPosition(int i) {
+        positions.add(i);
     }
+
     @Override
       public String toString() {
           return type + " " + index + ", #" + number + ", " + positions;
 }
 
 }
+
+
